@@ -20,61 +20,58 @@ namespace MasterMind
 
         public MainWindow()
         {
-            InitializeComponent();
-            InitialiseerComboBoxes();
-            GenerateSecretCode();
-            InitializeTimer();
-            UpdateDebugTextBox();
+            InitializeStartMenu();
         }
 
-        //private void InitializeStartMenu()
-        //{
-        //    MessageBoxResult start = MessageBox.Show("" +
-        //        "1. Spel Starten" + 
-        //        "2. highscores" +
-        //        "3. aantal pogingen" +
-        //        "4.instellingen");
-        //    MessageBoxButton button1;
-        //    MessageBoxButton button2;
-        //    MessageBoxButton button3;
-        //    MessageBoxButton button4;
+        private void InitializeStartMenu()
+        {
+            MessageBoxResult start = MessageBox.Show("" +
+                "1. Spel Starten" + 
+                "2. highscores" +
+                "3. aantal pogingen" +
+                "4.instellingen");
+            MessageBoxButton button1;
+            MessageBoxButton button2;
+            MessageBoxButton button3;
+            MessageBoxButton button4;
            
 
-        //    if (start = MessageBoxResult.button1); // runt de startgame event 
-        //    {
-        //        InitializeStartGame();
+            if (start = MessageBoxResult.button1); // runt de startgame event 
+            {
+                InitializeStartGame();
 
-        //    }
-        //    if (start = MessageBoxResult.button2) ; // laat de highscores zien met "Naam : Highscore"
-        //    {
-        //        initializeHighScores();
-        //    }
-        //    if (start = MessageBoxResult.button3) // closed the application
-        //    {
-        //        Close();
-        //    }
-        //    if (start = MessageBoxResult.button4) // zet een variable die het tekvakst waarde neemt en ge kunt kiezen tussen de attemps
-        //    {
-        //    }
-        //}
+            }
+            if (start = MessageBoxResult.button2) ; // laat de highscores zien met "Naam : Highscore"
+            {
+                GenerateHighscore();
+            }
+            if (start = MessageBoxResult.button3) // closed the application
+            {
+                Close();
+            }
+            if (start = MessageBoxResult.button4) // zet een variable die het tekvakst waarde neemt en ge kunt kiezen tussen de attemps
+            {
+            }
+        }
 
         private void InitializeStartGame()
         {
             // vraag de naam eerse en dan runt ge de game sla de naam op en voeg de highscore toe later
-            ShowDialog();    // de naam input
+            ShowDialog();
+            int name = DialogResult;       // de naam input
             InitializeComponent();
             InitialiseerComboBoxes();
             GenerateSecretCode();
             InitializeTimer();
             UpdateDebugTextBox();
         }
-        //private void GenerateHighscore() // maak de highscorelist tot 15 
-        //{
-        //    int highscore = new Random();
-        //    code = Enumerable.Range(0, 15)
-        //                     .Select(_ => allColors[highscore.])
-        //                     .ToArray();
-        //}
+        private void GenerateHighscore() // maak de highscorelist tot 15 
+        {
+            int Highscore = new Random();
+            code = Enumerable.Range(0, 15)
+                             .Select(_ => allColors[score.Next()])
+                             .ToArray();
+        }
 
 
 
@@ -297,7 +294,7 @@ namespace MasterMind
 
             if (isWinner == true)
             {
-                ////GenerateHighscore();
+                GenerateHighscore();
                 ResetGame();
             }
         }
