@@ -115,7 +115,11 @@ namespace MasterMind
             this.Title = $"Secret Code: {string.Join(", ", code)}";
         }
 
-        //
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (sender == comboBox1)
