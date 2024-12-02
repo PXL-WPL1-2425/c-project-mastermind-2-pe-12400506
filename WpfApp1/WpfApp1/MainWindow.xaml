@@ -1,0 +1,35 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="MasterMind.MainWindow"
+        Title="MainWindow" Height="450" Width="800" Closing="Window_Closing">
+    <Window.InputBindings>
+        <KeyBinding Key="F12" Modifiers="Control" Command="{Binding DebugShortcut}"/>
+    </Window.InputBindings>
+    
+    <Grid>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="46" Margin="20,21,0,0" VerticalAlignment="Top" Width="157"  SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label x:Name="label1" HorizontalAlignment="Left" Height="96" Margin="20,83,0,0" VerticalAlignment="Top" Width="157" BorderBrush="Black" BorderThickness="4" Background="Transparent"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Height="46" Margin="208,21,0,0" VerticalAlignment="Top" Width="158" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label x:Name="label2" HorizontalAlignment="Left" Height="96" Margin="208,83,0,0" VerticalAlignment="Top" Width="158" BorderBrush="Black" BorderThickness="4" Background="Transparent"/>
+        <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Height="46" Margin="397,21,0,0" VerticalAlignment="Top" Width="157" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label x:Name="label3" HorizontalAlignment="Left" Height="96" Margin="397,83,0,0" VerticalAlignment="Top" Width="157" BorderBrush="Black" BorderThickness="4" Background="Transparent"/>
+        <ComboBox x:Name="comboBox4" HorizontalAlignment="Left" Height="53" Margin="598,19,0,0" VerticalAlignment="Top" Width="165" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Label x:Name="label4" HorizontalAlignment="Left" Height="95" Margin="593,88,0,0" VerticalAlignment="Top" Width="167" BorderBrush="Black" BorderThickness="4" Background="Transparent" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.012"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="testButton" Content="Check Code" HorizontalAlignment="Left" Height="63" Margin="287,187,0,0" VerticalAlignment="Top" Width="236" Click="testButton_Click"/>
+        <TextBox x:Name="debugTextBox" IsReadOnly="True" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top" Width="300" Margin="10" Foreground="White" Background="Black" IsEnabled="False" BorderBrush="Black" TextAlignment="Center" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" Width="760" Margin="0,270,0,10">
+            <StackPanel x:Name="historyPanel" Orientation="Vertical"/>
+        </ScrollViewer>
+        <Label x:Name="scoreLabel" Content="Score: 0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="536,201,0,0" FontSize="16" FontWeight="Bold" Width="244" Height="53" />
+    </Grid>
+</Window>
